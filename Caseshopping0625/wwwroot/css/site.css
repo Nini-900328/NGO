@@ -1,0 +1,46 @@
+﻿/*  使用者下拉選單樣式 */
+.custom-user-menu {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    padding: 0.1rem 0.1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 180px;
+}
+
+/* Navbar 樣式 */
+.custom-navbar {
+    background-color: #f8f3ef; /* 淺米色背景 */
+    border-bottom: 2px solid #ddd;
+}
+
+/*  Navbar 按鈕樣式 */
+.nav-btn {
+    color: rgba(0, 0, 0, 0.7); /* 修正錯誤：原為 0.1 太淡看不見 */
+    font-weight: 500;
+    border-radius: 0.5rem;
+    padding: 7px 9px;
+    transition: all 0.3s ease;
+    text-decoration: none !important;
+}
+
+    .nav-btn:hover {
+        background-color: #d1e7dd; /* 淺綠 hover */
+        color: #155724;
+    }
+
+    .nav-btn.active {
+        color: white !important;
+        background-color: #198754 !important; /* Bootstrap 綠色 */
+        font-weight: bold;
+    }
+
+.search-box {
+    width: 300px; /* 調整這邊變寬 */
+    min-width: 200px;
+    max-width: 100%;
+}
+
+.tag-buttons {
+    flex-grow: 1;
+    text-align: center;
+}

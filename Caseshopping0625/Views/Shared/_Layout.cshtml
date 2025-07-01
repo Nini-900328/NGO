@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] 個案選購頁面</title>
+
+    <!--  使用本地 Bootstrap -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- 你的自訂樣式 -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    @* <link rel="stylesheet" href="~/Caseshopping0625.styles.css" asp-append-version="true" /> *@
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-light custom-navbar">
+            <div class="container-fluid d-flex justify-content-between align-items-center">
+                <!-- 社工管理按鈕 -->
+                <div class="ps-2">
+                    <div class="btn btn-outline-light text-dark nav-btn">社工管理</div>
+                </div>
+
+                @{
+                    var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+                }
+                <!-- 個案選單連結 -->
+                <div class="flex-grow-1 d-flex justify-content-center">
+                    <ul class="navbar-nav flex-row gap-3">
+                        <li class="nav-item">
+                            <a class="nav-btn @(currentController == "Home" ? "active" : "")" href="#">首頁</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-btn @(currentController == "Case" ? "active" : "")" href="/Case/ShoppingIndex">物資選購</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-btn @(currentController == "Activity" ? "active" : "")" href="/Activity/Index">活動</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-btn @(currentController == "Home" ? "" : "")" href="#">組織介紹</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-btn @(currentController == "Home" ? "" : "")" href="#">聯絡我們</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 右側 Hi 使用者下拉選單 -->
+                <div class="pe-2">
+                    <div class="dropdown ">
+                        <button class="btn btn-outline-light text-dark dropdown-toggle nav-btn" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            Hi 使用者
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end custom-user-menu" aria-labelledby="userDropdown">
+                            <li><span class="dropdown-item-text text-muted small"><i class="bi bi-envelope"></i> example@gmail.com</span></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">選購紀錄</a></li>
+                            <li><a class="dropdown-item" href="#">活動紀錄</a></li>
+                            <li><a class="dropdown-item" href="#">修改資料</a></li>
+                            <li><a class="dropdown-item text-danger" href="#">登出</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            
+        </nav>
+    </header>
+
+    <!-- 主內容顯示區域 -->
+    @RenderBody()
+
+    <!-- 目前還不需要footer -->
+    @* <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - Caseshopping0625 -
+            <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer> *@
+
+    <!-- 這行 jQuery是因為Bootstap5不再自動依賴 jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!--  使用本地 Bootstrap JS -->
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- 你的自訂 JS -->
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+
+    @* <!-- 插入頁面專屬腳本（每頁可用 @section Scripts {} 自訂） --> *@
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
