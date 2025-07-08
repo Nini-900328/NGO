@@ -9,5 +9,8 @@ namespace NGOPlatformWeb.Models.Entity
         public DbSet<Supply> Supplies { get; set; }
         public DbSet<SupplyCategory> SupplyCategories { get; set; }
         // 後續其他 DbSet 也可一起加上
+        public DbSet<RegularSupplyNeeds> RegularSuppliesNeeds { get; set; }
+        public DbSet<EmergencySupplyNeeds> EmergencySupplyNeeds { get; set; }
+
     }
 }

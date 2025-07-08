@@ -8,5 +8,15 @@ namespace NGOPlatformWeb.Controllers
         {
             return View();
         }
+    public IActionResult CaseActivityList()
+        {
+            // 之後會改成從資料庫撈，現在先給假資料
+            return View(); // View 名稱預設會叫 CaseActivityList.cshtml
+        }
+
+        public IActionResult CasePurchaseList()
+        {
+            return View();
+        }
     }
 }
