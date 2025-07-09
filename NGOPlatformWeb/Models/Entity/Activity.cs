@@ -29,7 +29,10 @@ namespace NGOPlatformWeb.Models.Entity
         public string? TargetAudience { get; set; }
 
         public string? Status { get; set; }
+<<<<<<< HEAD
         public string? Category { get; set; }  
 
+=======
+>>>>>>> 452d115560186ede5e06399a128f6c33e3e05d78
     }
 }

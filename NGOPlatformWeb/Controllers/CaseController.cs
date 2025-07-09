@@ -1,9 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NGOPlatformWeb.Models.Entity;
+<<<<<<< HEAD
 using NGOPlatformWeb.Models.ViewModels;
 using System.Security.Claims;// 個案身份操作功能，例如查看適用活動或可領取物資
 
+=======
+// 個案身份操作功能，例如查看適用活動或可領取物資
+using NGOPlatformWeb.Models.ViewModels;
+>>>>>>> 452d115560186ede5e06399a128f6c33e3e05d78
 
 namespace NGOPlatformWeb.Controllers
 {
@@ -33,8 +38,12 @@ namespace NGOPlatformWeb.Controllers
         }
         public IActionResult CasePurchaseList(string category)
         {
+<<<<<<< HEAD
 
             int caseId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value ?? "0");
+=======
+            int caseId = 1; // 假資料，之後可從 Claims or Session 取代
+>>>>>>> 452d115560186ede5e06399a128f6c33e3e05d78
 
             var viewModel = new SupplyRecordViewModel
             {

@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NGOPlatformWeb.Models.Entity;
 using System.Linq;
 using static Microsoft.Extensions.Logging.EventSource.LoggingEventSource;
+=======
+﻿using Microsoft.AspNetCore.Mvc;
+using NGOPlatformWeb.Models.Entity;
+using System.Linq;
+>>>>>>> 452d115560186ede5e06399a128f6c33e3e05d78
 
 public class ActivityController : Controller
 {
@@ -12,6 +18,7 @@ public class ActivityController : Controller
     {
         _context = context;
     }
+<<<<<<< HEAD
     [Authorize(Roles = "Case")]
     public IActionResult CaseActivityIndex(string? category, string? keyword)
     {
@@ -32,6 +39,15 @@ public class ActivityController : Controller
     }
     [Authorize(Roles = "Case")]
     public IActionResult CaseSignup(int id)
+=======
+
+    public IActionResult ActivityIndex()
+    {
+        var activities = _context.Activities.ToList();
+        return View(activities);
+    }
+    public IActionResult Signup(int id)
+>>>>>>> 452d115560186ede5e06399a128f6c33e3e05d78
     {
         var activity = _context.Activities.FirstOrDefault(a => a.ActivityId == id);
         if (activity == null) return NotFound();

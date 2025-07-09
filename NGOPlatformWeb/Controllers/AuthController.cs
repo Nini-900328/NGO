@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
@@ -8,10 +9,15 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
+=======
+﻿using Microsoft.AspNetCore.Mvc;
+// (暫時忽略此功能) 共用身份驗證登入/登出處理 可視後續拆分
+>>>>>>> 452d115560186ede5e06399a128f6c33e3e05d78
 namespace NGOPlatformWeb.Controllers
 {
     public class AuthController : Controller
     {
+<<<<<<< HEAD
         private readonly NGODbContext _context;
 
         public AuthController(NGODbContext context)
@@ -102,6 +108,11 @@ namespace NGOPlatformWeb.Controllers
                 principal,
                 new AuthenticationProperties { IsPersistent = true }
             );
+=======
+        public IActionResult Index()
+        {
+            return View();
+>>>>>>> 452d115560186ede5e06399a128f6c33e3e05d78
         }
     }
 }
